@@ -7,270 +7,22 @@
     <meta name="description" content="Материалы для самопомощи: гайд ВОЗ по стрессу, тесты на депрессию и тревогу по Беку, книжная полка.">
     
     <meta name="color-scheme" content="light only">
+    <meta name="theme-color" content="#FAF6F0">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23E3EEF3'/><path d='M10 62 Q 30 48 50 62 T 90 62' stroke='%235A7A8F' stroke-width='8' fill='none' stroke-linecap='round'/></svg>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Материалы для самопомощи — Мария Бурляева">
+    <meta property="og:description" content="Гайд ВОЗ «Важные навыки в периоды стресса», тесты Бека и книжная полка психолога. Бережно и с заботой.">
+    <!-- После публикации замените YOUR-DOMAIN на адрес GitHub Pages -->
+    <meta property="og:image" content="https://YOUR-DOMAIN.github.io/assets/img/reading.jpg">
+    <meta property="og:url" content="https://YOUR-DOMAIN.github.io/materials.html">
+    <link rel="canonical" href="https://YOUR-DOMAIN.github.io/materials.html">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --sand-lightest: #FAF6F0;
-            --sand-light: #F5EDE0;
-            --sand: #E8DCC4;
-            --sand-medium: #D9C5A8;
-            --sand-dark: #C4B08F;
-            --blue-light: #E3EEF3;
-            --blue: #B8D4E3;
-            --blue-medium: #8FB3C9;
-            --blue-dark: #5A7A8F;
-            --blue-deep: #3D5A6E;
-            --white: #FFFFFF;
-            --text-dark: #3D4F5A;
-            --text-light: #6B7F8C;
-            --font-heading: 'Cormorant Garamond', serif;
-            --font-body: 'Manrope', sans-serif;
-            --font-hand: 'Caveat', cursive;
-            --radius-sm: 8px;
-            --radius-md: 16px;
-            --radius-lg: 24px;
-            --shadow-soft: 0 4px 20px rgba(90, 122, 143, 0.08);
-            --shadow-medium: 0 8px 30px rgba(90, 122, 143, 0.12);
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --section-spacing: 100px;
-        }
-
-        html, body { color-scheme: light; }
-        @media (prefers-color-scheme: dark) {
-            html, body { color-scheme: light; }
-            * { color-adjust: exact; -webkit-print-color-adjust: exact; }
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: var(--font-body);
-            background: linear-gradient(180deg, var(--sand-lightest) 0%, var(--sand-light) 100%);
-            color: var(--text-dark);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ========== ПЕСОЧНАЯ ТЕКСТУРА ========== */
-        .sand-ripples {
-            position: relative;
-            background-color: #E8DCC4;
-        }
-        .sand-ripples::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: url('assets/img/sand-texture.jpg') center / cover no-repeat;
-            background-attachment: fixed;
-            filter: brightness(0.95) saturate(1.1);
-            pointer-events: none;
-            z-index: 0;
-        }
-        .sand-ripples::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(250, 246, 240, 0.82) 0%, rgba(245, 237, 224, 0.72) 100%);
-            pointer-events: none;
-            z-index: 1;
-        }
-        .sand-ripples > * { position: relative; z-index: 2; }
-        @media (max-width: 768px) {
-            .sand-ripples::before { background-attachment: scroll; }
-        }
-
-        h1, h2, h3 { font-family: var(--font-heading); font-weight: 400; line-height: 1.2; color: var(--text-dark); }
-        h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
-        h2 { font-size: clamp(2rem, 4vw, 2.6rem); margin-bottom: 16px; }
-        h3 { font-size: 1.4rem; margin-bottom: 10px; }
-        .handwritten { font-family: var(--font-hand); color: var(--blue-dark); font-size: 2rem; margin-bottom: 16px; }
-        .text-light { color: var(--text-light); }
-        .accent-italic { font-style: italic; color: var(--blue-medium); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        section { padding: var(--section-spacing) 0; }
-        .lead { color: var(--text-light); line-height: 1.8; }
-        .steps { margin-top: 12px; padding-left: 18px; color: var(--text-light); font-size: .92rem; line-height: 1.7; }
-        .steps li { margin-bottom: 6px; }
-
-        .navbar {
-            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
-            width: calc(100% - 40px); max-width: 1200px;
-            background: rgba(250, 246, 240, 0.95); backdrop-filter: blur(16px);
-            border: 1px solid rgba(232, 220, 196, 0.5); border-radius: 50px;
-            padding: 14px 28px; display: flex; justify-content: space-between; align-items: center;
-            z-index: 1000; box-shadow: var(--shadow-soft);
-        }
-        .nav-logo { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-dark); text-decoration: none; }
-        .nav-logo span { display: block; font-family: var(--font-body); font-size: 0.75rem; color: var(--text-light); }
-        .nav-links { display: flex; gap: 28px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 0.95rem; transition: color var(--transition); }
-        .nav-links a:hover, .nav-links a.active { color: var(--blue-dark); }
-        .nav-burger { display: none; background: none; border: none; cursor: pointer; }
-        .nav-burger span { display: block; width: 24px; height: 2px; background: var(--text-dark); margin: 5px 0; }
-
-        /* ПЕРВЫЙ БЛОК: ПОЛАРОИД НА ПЕСКЕ */
-        .hero-v4 { padding: calc(var(--section-spacing) + 60px) 0 110px; }
-        .hero-v4-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 70px; align-items: center; }
-        .hero-v4-text { margin-bottom: 32px; }
-        .hero-lead { color: var(--text-light); font-size: 1.1rem; margin-top: 16px; max-width: 520px; line-height: 1.7; }
-        .polaroid {
-            background: var(--white); padding: 18px 18px 26px; border-radius: 6px;
-            box-shadow: var(--shadow-medium); transform: rotate(-2.5deg);
-            max-width: 480px; margin: 0 auto; position: relative; transition: transform var(--transition);
-        }
-        .polaroid:hover { transform: rotate(0deg) translateY(-4px); }
-        .polaroid::before {
-            content: ''; position: absolute; top: -16px; left: 50%;
-            transform: translateX(-50%) rotate(-3deg);
-            width: 130px; height: 32px; background: rgba(217, 197, 168, .75); border-radius: 2px;
-        }
-        .polaroid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 30%; display: block; }
-        .polaroid figcaption { font-family: var(--font-hand); font-size: 1.6rem; color: var(--text-light); text-align: center; margin-top: 16px; }
-
-        /* ГАЙД: КНИЖНЫЕ ГЛАВЫ С ЛИПКОЙ КОЛОНКОЙ */
-        .guide-sticky { display: grid; grid-template-columns: 1fr 1.5fr; gap: 70px; align-items: start; }
-        .guide-aside { position: sticky; top: 110px; }
-        .guide-aside .lead { margin: 0 0 28px; }
-        .chapters-sheet {
-            background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(8px);
-            border-radius: var(--radius-lg); padding: 16px 48px;
-            box-shadow: var(--shadow-soft); border: 1px solid rgba(232, 220, 196, 0.4);
-        }
-        .chapter {
-            display: grid; grid-template-columns: 90px 1fr; gap: 28px;
-            padding: 36px 0; border-bottom: 1px solid rgba(90, 122, 143, 0.15);
-        }
-        .chapter:first-child { padding-top: 28px; }
-        .chapter:last-child { border-bottom: none; padding-bottom: 28px; }
-        .chapter-num { font-family: var(--font-heading); font-style: italic; font-size: 3.2rem; color: var(--blue-medium); line-height: 1; }
-        .chapter h3 { font-size: 1.4rem; margin-bottom: 10px; }
-        .chapter p { color: var(--text-light); line-height: 1.7; }
-        .btn-download {
-            display: inline-flex; align-items: center; gap: 10px; padding: 16px 36px;
-            background: var(--blue-dark); color: var(--white); text-decoration: none;
-            border-radius: 50px; font-weight: 600; transition: all var(--transition);
-        }
-        .btn-download:hover { background: var(--blue-deep); transform: translateY(-2px); box-shadow: var(--shadow-medium); }
-        .btn-who {
-            display: inline-block; margin-top: 12px; padding: 14px 26px;
-            border: 1px solid var(--blue-dark); color: var(--blue-dark); border-radius: 50px;
-            text-decoration: none; font-weight: 500; transition: all var(--transition);
-        }
-        .btn-who:hover { background: var(--blue-dark); color: var(--white); }
-        .license-note {
-            margin: 48px auto 0; font-size: .8rem; color: var(--text-light);
-            line-height: 1.6; text-align: center; max-width: 800px;
-        }
-
-        /* ТЕСТЫ — ГОЛУБОЙ ФОН */
-        .tests-section { background: linear-gradient(135deg, var(--blue-light) 0%, var(--blue) 100%); }
-        .tests-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; max-width: 900px; margin: 0 auto 40px; }
-        .test-card {
-            background: var(--white); border-radius: var(--radius-md);
-            padding: 40px 32px; box-shadow: var(--shadow-soft);
-            text-align: center; transition: all var(--transition);
-            display: flex; flex-direction: column; align-items: center;
-        }
-        .test-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-medium); }
-        .test-icon {
-            width: 64px; height: 64px; background: var(--blue-light); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.6rem; color: var(--blue-dark); margin-bottom: 20px;
-        }
-        .test-card h3 { font-size: 1.4rem; margin-bottom: 12px; }
-        .test-card p { color: var(--text-light); font-size: 0.95rem; line-height: 1.7; margin-bottom: 24px; flex-grow: 1; }
-        .btn-test {
-            display: inline-block; padding: 12px 32px; background: var(--sand-medium);
-            color: var(--text-dark); border-radius: 50px; text-decoration: none; font-weight: 600; transition: all var(--transition);
-        }
-        .btn-test:hover { background: var(--sand-dark); transform: translateY(-2px); }
-        .test-disclaimer { max-width: 700px; margin: 0 auto; text-align: center; font-size: 0.85rem; color: var(--text-dark); opacity: 0.75; line-height: 1.7; }
-
-        /* КНИЖНАЯ ПОЛКА */
-        .books-section { background: var(--white); }
-        .books-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; max-width: 1000px; margin: 0 auto; }
-        .book-card {
-            background: var(--sand-lightest); border-radius: var(--radius-md); overflow: hidden;
-            box-shadow: var(--shadow-soft); transition: all var(--transition);
-        }
-        .book-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-medium); }
-        .book-card img { width: 100%; height: 320px; object-fit: cover; object-position: center 35%; display: block; }
-        .book-card-body { padding: 28px 24px; }
-        .book-card h3 { font-size: 1.25rem; margin-bottom: 8px; }
-        .book-card p { color: var(--text-light); font-size: 0.92rem; line-height: 1.7; }
-
-        /* CTA */
-        .cta-section { background: var(--sand-lightest); }
-        .cta-box {
-            max-width: 800px; margin: 0 auto;
-            background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue-dark) 100%);
-            border-radius: var(--radius-lg); padding: 60px 40px; text-align: center; color: var(--white);
-        }
-        .cta-box h2 { color: var(--white); }
-        .cta-box p { color: rgba(255,255,255,0.85); max-width: 500px; margin: 0 auto 32px; line-height: 1.7; }
-        .cta-photo {
-            width: 130px; height: 130px; border-radius: 50%; object-fit: cover; object-position: center 30%;
-            border: 4px solid rgba(255, 255, 255, 0.35); display: block; margin: 0 auto 24px;
-        }
-        .btn-cta {
-            display: inline-block; padding: 16px 36px; background: var(--sand-medium);
-            color: var(--text-dark); border-radius: 50px; text-decoration: none; font-weight: 600; transition: all var(--transition);
-        }
-        .btn-cta:hover { background: var(--sand-dark); transform: translateY(-2px); }
-
-        /* ========== ФУТЕР (идентичен главной) ========== */
-        footer { background: linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-dark) 100%); color: rgba(255, 255, 255, 0.7); padding: 80px 0 30px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 60px; }
-        .footer-col h4 { color: var(--white); font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 24px; }
-        .footer-col p { line-height: 1.7; margin-bottom: 16px; }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: 12px; }
-        .footer-col a { color: rgba(255, 255, 255, 0.7); text-decoration: none; transition: color var(--transition); }
-        .footer-col a:hover { color: var(--sand); }
-        .footer-social { display: flex; gap: 12px; margin-top: 24px; }
-        .footer-social a {
-            width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.1);
-            display: flex; align-items: center; justify-content: center; color: var(--white); transition: all var(--transition);
-        }
-        .footer-social a:hover { background: var(--sand-medium); transform: translateY(-3px); }
-        .footer-social .max-label {
-            font-size: 0.62rem;
-            font-weight: 700;
-            letter-spacing: 0.03em;
-            line-height: 1;
-            font-family: var(--font-body);
-        }
-        .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px; text-align: center; font-size: 0.85rem; }
-
-        @media (max-width: 1024px) {
-            .hero-v4-grid { grid-template-columns: 1fr; gap: 48px; text-align: center; }
-            .hero-v4-text { margin-bottom: 0; }
-            .hero-lead { margin: 16px auto 0; }
-            .polaroid { max-width: 420px; }
-            .guide-sticky { grid-template-columns: 1fr; gap: 40px; }
-            .guide-aside { position: static; }
-            .footer-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 768px) {
-            section { padding: 70px 0; }
-            .nav-links { display: none; }
-            .nav-burger { display: block; }
-            .hero-v4 { padding-top: 140px; }
-            .polaroid { max-width: 340px; }
-            .chapters-sheet { padding: 8px 24px; }
-            .chapter { grid-template-columns: 56px 1fr; gap: 18px; padding: 28px 0; }
-            .chapter-num { font-size: 2.4rem; }
-            .footer-grid { grid-template-columns: 1fr; }
-        }
-
-        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -283,7 +35,7 @@
             <li><a href="index.html#faq">FAQ</a></li>
             <li><a href="index.html#contact">Контакты</a></li>
         </ul>
-        <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+        <button class="nav-burger" id="navBurger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
     </nav>
 
     <!-- ПЕРВЫЙ БЛОК: ПОЛАРОИД НА ПЕСКЕ -->
@@ -295,7 +47,7 @@
                 <p class="hero-lead">Проверенные инструменты, которые помогают моим клиентам между сессиями — и поддержат вас, если вы столкнулись со стрессом прямо сейчас.</p>
             </div>
             <figure class="polaroid">
-                <img src="assets/img/reading.jpg" alt="Мария Бурляева с книгой">
+                <img src="assets/img/reading.jpg" alt="Мария Бурляева с книгой" decoding="async">
                 <figcaption>между сессиями — тоже терапия</figcaption>
             </figure>
         </div>
@@ -402,29 +154,38 @@
         </div>
     </section>
 
-    <!-- ТЕСТЫ НА ГОЛУБОМ ФОНЕ -->
+    <!-- ТЕСТЫ: линейные иконки-графики вместо буквальных метафор -->
     <section class="tests-section" id="tests">
         <div class="container">
-            <div style="text-align:center; max-width:700px; margin:0 auto 60px;">
-                <span class="handwritten" style="display:block;">Самопроверка</span>
+            <div class="section-header fade-in">
+                <span class="handwritten">Самопроверка</span>
                 <h2>Тесты <span class="accent-italic">для самопомощи</span></h2>
             </div>
 
             <div class="tests-grid">
                 <div class="test-card fade-in">
-                    <div class="test-icon"><i class="fas fa-cloud-rain"></i></div>
+                    <div class="test-icon" aria-hidden="true">
+                        <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                            <path d="M6 10c8 0 8 14 16 14s10-6 16-6"/>
+                            <path d="M6 22c8 0 8 10 16 10s10-4 16-4" opacity=".5"/>
+                        </svg>
+                    </div>
                     <h3>Шкала депрессии Бека</h3>
                     <p>Помогает оценить уровень депрессивных проявлений за последние две недели. 21 вопрос, занимает около 5 минут.</p>
-                    <!-- ЗАМЕНИТЕ href НА ССЫЛКУ НА ТЕСТ, КОГДА ОНА ПОЯВИТСЯ -->
-                    <a href="#" class="btn-test">Пройти тест</a>
+                    <!-- Когда появится ссылка: замените button на <a href="ССЫЛКА" class="btn-test" target="_blank" rel="noopener">Пройти тест</a> -->
+                    <button type="button" class="btn-test" disabled title="Ссылка на тест появится скоро">Пройти тест · скоро</button>
                 </div>
 
                 <div class="test-card fade-in">
-                    <div class="test-icon"><i class="fas fa-wind"></i></div>
+                    <div class="test-icon" aria-hidden="true">
+                        <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 22l6-10 6 20 6-20 6 20 6-10h6"/>
+                        </svg>
+                    </div>
                     <h3>Шкала тревоги Бека</h3>
                     <p>Позволяет оценить уровень тревожности и заметить, как она проявляется в теле, мыслях и поведении.</p>
-                    <!-- ЗАМЕНИТЕ href НА ССЫЛКУ НА ТЕСТ, КОГДА ОНА ПОЯВИТСЯ -->
-                    <a href="#" class="btn-test">Пройти тест</a>
+                    <!-- Когда появится ссылка: замените button на <a href="ССЫЛКА" class="btn-test" target="_blank" rel="noopener">Пройти тест</a> -->
+                    <button type="button" class="btn-test" disabled title="Ссылка на тест появится скоро">Пройти тест · скоро</button>
                 </div>
             </div>
 
@@ -439,27 +200,27 @@
     <!-- КНИЖНАЯ ПОЛКА -->
     <section class="books-section" id="books">
         <div class="container">
-            <div style="text-align:center; max-width:700px; margin:0 auto 60px;">
-                <span class="handwritten" style="display:block;">Книжная полка</span>
+            <div class="section-header fade-in">
+                <span class="handwritten">Книжная полка</span>
                 <h2>Книги, которые <span class="accent-italic">помогают</span></h2>
             </div>
             <div class="books-grid">
                 <div class="book-card fade-in">
-                    <img src="assets/img/book-clock.jpg" alt="Книга «Психосоматика. Тело говорит» и будильник">
+                    <img src="assets/img/book-clock.jpg" alt="Книга «Психосоматика. Тело говорит» и будильник" loading="lazy" decoding="async">
                     <div class="book-card-body">
                         <h3>Екатерина Тур «Психосоматика. Тело говорит»</h3>
                         <p>Как научиться слушать своё тело и подобрать ключ к его исцелению. Хороший старт для тех, кто хочет понять связь между симптомами и чувствами.</p>
                     </div>
                 </div>
                 <div class="book-card fade-in">
-                    <img src="assets/img/books-stack.jpg" alt="Стопка книг по психологии">
+                    <img src="assets/img/books-stack.jpg" alt="Стопка книг по психологии" loading="lazy" decoding="async">
                     <div class="book-card-body">
-                        <h3>«Осколки детских травм. Почему мы болеем и как это остановить»</h3>
+                        <h3>«Осколки детских травм. Почему мы болееем и как это остановить»</h3>
                         <p>О том, как детский опыт живёт в теле во взрослой жизни — и что можно сделать, чтобы этот круг остановился. Для бережного самоисследования.</p>
                     </div>
                 </div>
                 <div class="book-card fade-in">
-                    <img src="assets/img/sofa-book.jpg" alt="Отдых с книгой на диване">
+                    <img src="assets/img/sofa-book.jpg" alt="Отдых с книгой на диване" loading="lazy" decoding="async">
                     <div class="book-card-body">
                         <h3>…и немного лёгкости</h3>
                         <p>Отдых — это тоже навык. Позвольте себе просто полежать с книгой на лице: тело скажет вам спасибо за паузу.</p>
@@ -473,7 +234,7 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-box fade-in">
-                <img src="assets/img/about.jpg" alt="Мария Бурляева" class="cta-photo">
+                <img src="assets/img/about.jpg" alt="Мария Бурляева" class="cta-photo" loading="lazy" decoding="async">
                 <span class="handwritten" style="color: var(--sand);">Если самопомощи недостаточно</span>
                 <h2>Вам не обязательно справляться в одиночку</h2>
                 <p>Самопомощь — это ценно, но рядом с другим человеком изменения происходят глубже и бережнее. Я буду рада сопровождать вас.</p>
@@ -489,8 +250,9 @@
                     <h4>Мария Бурляева</h4>
                     <p>Клинический психолог,<br>гештальт-психотерапевт.<br>Бережно о важном.</p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-                        <a href="#" aria-label="VK"><i class="fab fa-vk"></i></a>
+                        <a href="https://t.me/psyholog_Maria_Burlyaeva" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="https://vk.com/id70805044" target="_blank" rel="noopener" aria-label="VK"><i class="fab fa-vk"></i></a>
+                        <!-- Замените # на ссылку вашего профиля MAX, когда он появится -->
                         <a href="#" aria-label="MAX"><span class="max-label">MAX</span></a>
                     </div>
                 </div>
@@ -511,7 +273,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Мария Бурляева. Все права защищены.</p>
+                <p>&copy; 2026 Мария Бурляева. Все права защищены. · <a href="privacy.html">Политика конфиденциальности</a></p>
             </div>
         </div>
     </footer>
