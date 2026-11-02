@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Материалы для самопомощи — Мария Бурляева</title>
-    <meta name="description" content="Материалы для самопомощи: гайд ВОЗ по стрессу, тесты на депрессию и тревогу по Беку, книжная полка.">
+    <meta name="description" content="Материалы для самопомощи: гайд ВОЗ по стрессу, тесты на депрессию и тревогу по Беку, книжная полка с одиннадцатью книгами.">
     
     <meta name="color-scheme" content="light only">
     <meta name="theme-color" content="#FAF6F0">
@@ -27,7 +27,7 @@
 <body>
 
     <nav class="navbar">
-        <a href="index.html" class="nav-logo">Мария Бурляева<span>Клинический психолог · гештальт-психотерапевт</span></a>
+        <a href="index.html" class="nav-logo">Мария Бурляева<span>Клинический психолог</span><span>гештальт-психотерапевт</span></a>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html#about">Обо мне</a></li>
             <li><a href="index.html#formats">Формат работы</a></li>
@@ -80,7 +80,7 @@
                         <span class="chapter-num">I</span>
                         <div>
                             <h3>Заземляемся</h3>
-                            <p>Для заземления во время «эмоциональной бури» обратите внимание на свои мысли и чувства, замедлитесь и соединитесь со своим телом — медленно прижимая ноги к полу, потягиваясь и дыша, — а затем переключитесь и включитесь в окружающий мир.</p>
+                            <p>Для заземления во время «эмоционационной бури» обратите внимание на свои мысли и чувства, замедлитесь и соединитесь со своим телом — медленно прижимая ноги к полу, потягиваясь и дыша, — а затем переключитесь и включитесь в окружающий мир.</p>
                             <ul class="steps">
                                 <li>Что вы можете увидеть, услышать, потрогать, попробовать и почувствовать? С любопытством заметьте, что находится перед вами</li>
                                 <li>Зафиксируйте, где вы находитесь, кто рядом с вами и что вы делаете</li>
@@ -197,28 +197,33 @@
             <div class="section-header fade-in">
                 <span class="handwritten">Книжная полка</span>
                 <h2>Книги, которые <span class="accent-italic">помогают</span></h2>
+                <p class="lead">Одиннадцать книг, которые я читаю сама и рекомендую клиентам. Выберите название — витрина покажет обложку и описание.</p>
             </div>
-            <div class="books-grid">
-                <div class="book-card fade-in">
-                    <img src="assets/img/book-clock.jpg" alt="Книга «Психосоматика. Тело говорит» и будильник" loading="lazy" decoding="async">
-                    <div class="book-card-body">
-                        <h3>Екатерина Тур «Психосоматика. Тело говорит»</h3>
-                        <p>Как научиться слушать своё тело и подобрать ключ к его исцелению. Хороший старт для тех, кто хочет понять связь между симптомами и чувствами.</p>
+
+            <div class="books-showcase fade-in">
+                <div class="stage" id="bookStage">
+                    <img class="stage-cover" src="assets/img/book-clock.jpg" alt="Обложка книги «Психосоматика. Тело говорит»">
+                    <div class="stage-info">
+                        <h3 id="stageTitle">«Психосоматика. Тело говорит»</h3>
+                        <span class="stage-author" id="stageAuthor">Екатерина Тур</span>
+                        <div class="stage-desc" id="stageDesc">
+                            <p>Как научиться слушать своё тело и подобрать ключ к его исцелению. Хороший старт для тех, кто хочет понять связь между симптомами и чувствами.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="book-card fade-in">
-                    <img src="assets/img/books-stack.jpg" alt="Стопка книг по психологии" loading="lazy" decoding="async">
-                    <div class="book-card-body">
-                        <h3>«Осколки детских травм. Почему мы болееем и как это остановить»</h3>
-                        <p>О том, как детский опыт живёт в теле во взрослой жизни — и что можно сделать, чтобы этот круг остановился. Для бережного самоисследования.</p>
-                    </div>
-                </div>
-                <div class="book-card fade-in">
-                    <img src="assets/img/sofa-book.jpg" alt="Отдых с книгой на диване" loading="lazy" decoding="async">
-                    <div class="book-card-body">
-                        <h3>…и немного лёгкости</h3>
-                        <p>Отдых — это тоже навык. Позвольте себе просто полежать с книгой на лице: тело скажет вам спасибо за паузу.</p>
-                    </div>
+
+                <div class="book-list">
+                    <button class="book-item active" data-i="0"><span class="n">01</span><span class="t">«Психосоматика. Тело говорит»</span><span class="a">Екатерина Тур</span></button>
+                    <button class="book-item" data-i="1"><span class="n">02</span><span class="t">«Осколки детских травм. Почему мы болеем и как это остановить»</span><span class="a">Донна Джексон Наказава</span></button>
+                    <button class="book-item" data-i="2"><span class="n">03</span><span class="t">«Быть, а не казаться»</span><span class="a">Стивен Кови</span></button>
+                    <button class="book-item" data-i="3"><span class="n">04</span><span class="t">«Искусство жить просто»</span><span class="a">Доминик Лоро</span></button>
+                    <button class="book-item" data-i="4"><span class="n">05</span><span class="t">«Психология вредных привычек»</span><span class="a">Ричард О’Коннор</span></button>
+                    <button class="book-item" data-i="5"><span class="n">06</span><span class="t">«Век тревожности»</span><span class="a">Скотт Стоссел</span></button>
+                    <button class="book-item" data-i="6"><span class="n">07</span><span class="t">«Близко к сердцу»</span><span class="a">Илсе Санд</span></button>
+                    <button class="book-item" data-i="7"><span class="n">08</span><span class="t">«Страх близости»</span><span class="a">Илсе Санд</span></button>
+                    <button class="book-item" data-i="8"><span class="n">09</span><span class="t">«Решение проблем по методикам спецслужб»</span><span class="a">Морган Джонс</span></button>
+                    <button class="book-item" data-i="9"><span class="n">10</span><span class="t">«Укрощение амигдалы»</span><span class="a">Джон Арден</span></button>
+                    <button class="book-item" data-i="10"><span class="n">11</span><span class="t">«Беспокойный ум»</span><span class="a">Кей Джеймисон</span></button>
                 </div>
             </div>
         </div>
@@ -245,8 +250,9 @@
                     <div class="footer-social">
                         <a href="https://t.me/psyholog_Maria_Burlyaeva" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
                         <a href="https://vk.ru/id7080504" target="_blank" rel="noopener" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
-                        <a href="https://www.instagram.com/psyholog_maria_burlyaeva" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.b17.ru/burlyaeva/" target="_blank" rel="noopener" aria-label="Профиль на B17"><span class="b17-icon">B17</span></a>
                     </div>
+                    <p class="footer-note">Instagram — @psyholog_maria_burlyaeva<br><small>*запрещено на территории РФ</small></p>
                 </div>
                 <div class="footer-col">
                     <h4>Меню</h4>
@@ -281,6 +287,40 @@
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        const BOOKS = [
+            { t: '«Психосоматика. Тело говорит»', a: 'Екатерина Тур', d: ['Как научиться слушать своё тело и подобрать ключ к его исцелению. Хороший старт для тех, кто хочет понять связь между симптомами и чувствами.'], c: { src: 'assets/img/book-clock.jpg' } },
+            { t: '«Осколки детских травм. Почему мы болеем и как это остановить»', a: 'Донна Джексон Наказава', d: ['О том, как детский опыт живёт в теле во взрослой жизни — и что можно сделать, чтобы этот круг остановился. Для бережного самоисследования.'], c: { src: 'assets/img/books-stack.jpg' } },
+            { t: '«Быть, а не казаться»', a: 'Стивен Кови', d: ['Сборник эссе бизнес-эксперта Стивена Кови о том, как отличить ложные ценности от настоящих, а внешние показатели успеха от истинного величия. Ответственность, самопожертвование, следование приоритетам — вот принципы, которых должен придерживаться человек, если хочет добиться успеха.'], c: { src: 'assets/img/covers/byt-a-ne-kazatsya.jpg' } },
+            { t: '«Искусство жить просто»', a: 'Доминик Лоро', d: ['Доминик Лоро 20 лет прожила в Японии, где изучала философию даосизма. Она обнаружила, что принципы дзена применимы и полезны в обыденной жизни. Когда вы откажетесь от лишних вещей и неосознанного потребления, вы сможете заняться тем, что действительно важно, — своим умом и телом.'], c: { src: 'assets/img/covers/iskusstvo-zhit-prosto.jpg' } },
+            { t: '«Психология вредных привычек»', a: 'Ричард О’Коннор', d: ['Все мы любим наступать на одни и те же грабли и повторять одни и те же ошибки. С деструктивным поведением надо бороться. Психотерапевт Ричард О’Коннор рассказывает, как справиться с прокрастинацией, перееданием, неорганизованностью, беспокойством и неуместным самолечением.'], c: { src: 'assets/img/covers/psihologiya-vrednyh-privychek.jpg' } },
+            { t: '«Век тревожности»', a: 'Скотт Стоссел', d: ['Проблема хронического стресса в наши дни затрагивает чуть ли не каждого второго. Скотт Стоссел рассказывает о причинах появления невротических расстройств, методах лечения (от антидепрессантов до психотерапии) и способах справиться с тревожностью.', 'Но эта книга ценна ещё и честным описанием личного опыта: Стоссел многие годы боролся с депрессиями, фобиями, паническими атаками. Поэтому он знает не понаслышке, с чем приходится иметь дело людям, столкнувшимся с подобными проблемами.'], c: { src: 'assets/img/covers/vek-trevozhnosti.jpg' } },
+            { t: '«Близко к сердцу»', a: 'Илсе Санд', d: ['Книга датского психотерапевта Илсе Санд посвящена «новым интровертам» — высокочувствительным людям, которые остро реагируют на суету и критику, предпочитают уединение и быстро устают от общества. Из этой книги вы узнаете, как воспользоваться всеми преимуществами обострённого восприятия.'], c: { src: 'assets/img/covers/blizko-k-serdtsu.jpg' } },
+            { t: '«Страх близости»', a: 'Илсе Санд', d: ['Ещё одна книга Санд о проблемах людей, которые несколько иначе реагируют на окружающий мир. Эту книгу обязательно нужно прочитать тем, кто возвёл вокруг себя преграды и не даёт другим людям узнавать себя и любить.'], c: { src: 'assets/img/covers/strakh-blizosti.jpg' } },
+            { t: '«Решение проблем по методикам спецслужб»', a: 'Морган Джонс', d: ['Большинство людей не умеют анализировать проблему, а потому не всегда может найти верное решение в трудной ситуации. Бывший аналитик ЦРУ Морган Джонс пишет о проверенных инструментах, которые помогут вам разобраться с самыми разными проблемами и овладеть основами структурированного анализа.'], c: { src: 'assets/img/covers/reshenie-problem-specsluzhb.jpg' } },
+            { t: '«Укрощение амигдалы»', a: 'Джон Арден', d: ['Данные современных исследований в нейрофизиологии и практические рекомендации врача с огромным опытом помогут улучшить жизнь: избавиться от вредных привычек, не поддаваться грусти, развить память и психологическую устойчивость. Другими словами, вы сможете использовать особенности своего мозга себе же на пользу.'], c: { src: 'assets/img/covers/ukroshchenie-amigdaly.jpg' } },
+            { t: '«Беспокойный ум»', a: 'Кей Джеймисон', d: ['Биполярное расстройство — это постоянное маневрирование между периодами эйфории и невероятными спадами в чёрную депрессию. Психиатр Кей Джеймисон испытала это на себе, поэтому и стала изучать аффективные расстройства. В результате появилась это книга о борьбе с болезнью. Джеймисон пишет, что стоит только принять жизнь такой, какая она есть, как любые трудности станут преодолимыми.'], c: { src: 'assets/img/covers/bespokoynyy-um.jpg' } }
+        ];
+        const stage = document.getElementById('bookStage');
+        document.querySelectorAll('.book-item').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const book = BOOKS[+btn.dataset.i];
+                stage.classList.add('fade');
+                setTimeout(() => {
+                    stage.querySelector('.stage-cover, .stage-typo').outerHTML = book.c.src
+                        ? `<img class="stage-cover" src="${book.c.src}" alt="Обложка книги ${book.t}">`
+                        : `<div class="stage-typo" style="--tint:${book.c.tint}"><b>${book.t}</b><span>${book.a}</span></div>`;
+                    document.getElementById('stageTitle').textContent = book.t;
+                    const authorEl = document.getElementById('stageAuthor');
+                    authorEl.textContent = book.a;
+                    authorEl.style.display = book.a ? '' : 'none';
+                    document.getElementById('stageDesc').innerHTML = book.d.map(p => `<p>${p}</p>`).join('');
+                    document.querySelectorAll('.book-item').forEach(x => x.classList.remove('active'));
+                    btn.classList.add('active');
+                    stage.classList.remove('fade');
+                }, 300);
+            });
+        });
     </script>
 </body>
 </html>
