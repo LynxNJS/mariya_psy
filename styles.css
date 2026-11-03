@@ -229,7 +229,7 @@ button.faq-question:focus-visible, .footer-social a:focus-visible,
     gap: var(--sp-2);
 }
 
-/* Hero */
+/* HERO v4: минимум текста + записка у фото + траст-бар */
 .hero {
     padding-top: calc(var(--section-y) + 56px);
     padding-bottom: var(--section-y);
@@ -245,16 +245,46 @@ button.faq-question:focus-visible, .footer-social a:focus-visible,
 }
 .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--sp-8); align-items: center; position: relative; z-index: 1; }
 .hero-tagline { display: block; font-family: var(--font-hand); font-size: var(--fs-hand); color: var(--blue-dark); margin-bottom: var(--sp-1); }
-.hero-subtitle { font-size: var(--fs-lead); line-height: var(--lh-body); color: var(--text-light); margin: var(--sp-2) 0 var(--sp-3); max-width: 480px; }
-.hero-greeting { margin-top: var(--sp-3); max-width: 520px; }
-.hero-greeting p { font-size: var(--fs-lead); line-height: var(--lh-body); color: var(--text-light); }
-.hero-greeting p + p { margin-top: var(--sp-2); }
-.hero-badges { display: flex; gap: var(--sp-2); margin: var(--sp-3) 0; flex-wrap: wrap; }
+.hero-cta { margin-top: var(--sp-3); }
+.hero-photo { position: relative; }
+.hero-image { width: 100%; max-width: 420px; height: 520px; object-fit: cover; object-position: center 20%; border-radius: var(--radius-lg); box-shadow: var(--shadow-medium); display: block; margin: 0 auto; }
+.note-card {
+    position: absolute;
+    bottom: -48px;
+    left: -120px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+    padding: 20px 22px;
+    max-width: 280px;
+    transform: rotate(-2deg);
+}
+.note-card .hand {
+    font-family: var(--font-hand);
+    font-size: 1.4rem;
+    color: var(--blue-dark);
+    display: block;
+    margin-bottom: 6px;
+}
+.note-card p { font-size: var(--fs-caption); line-height: 1.55; color: var(--text-light); }
+.note-card p + p { margin-top: 6px; }
 .badge {
     background: var(--white); padding: var(--sp-1) var(--sp-2); border-radius: 50px;
     font-size: var(--fs-small); color: var(--text-dark); border: 1px solid var(--sand); font-weight: 500;
 }
-.hero-image { width: 100%; max-width: 420px; height: 520px; object-fit: cover; object-position: center 20%; border-radius: var(--radius-lg); box-shadow: var(--shadow-medium); }
+.trust-bar {
+    background: var(--white);
+    border-top: 1px solid rgba(232, 220, 196, 0.6);
+    border-bottom: 1px solid rgba(232, 220, 196, 0.6);
+    padding: var(--sp-3);
+}
+.trust-bar .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sp-2);
+    flex-wrap: wrap;
+}
 
 /* Формат работы */
 .formats-section { background: linear-gradient(135deg, var(--blue-light) 0%, var(--blue) 100%); }
@@ -540,7 +570,6 @@ button.faq-question {
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.6);
 }
-.footer-note small { font-size: 0.6875rem; color: rgba(255, 255, 255, 0.45); }
 .footer-social .b17-icon {
     font-family: var(--font-body);
     font-weight: 700;
@@ -712,8 +741,13 @@ footer { background: linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-dar
 @media (max-width: 1024px) {
     .hero-grid, .about-grid, .hero-v4-grid { grid-template-columns: 1fr; gap: var(--sp-6); }
     .hero-v4-text { margin-bottom: 0; }
-    .hero-subtitle, .hero-lead { margin-left: auto; margin-right: auto; }
-    .hero-greeting { margin-left: auto; margin-right: auto; }
+    .hero-lead { margin-left: auto; margin-right: auto; }
+    .note-card {
+        position: static;
+        transform: none;
+        margin: var(--sp-3) auto 0;
+        max-width: 420px;
+    }
     .format-card { grid-template-columns: 1fr; gap: var(--sp-3); }
     .format-meta { align-items: flex-start; }
     .guide-sticky { grid-template-columns: 1fr; gap: var(--sp-5); }
@@ -743,4 +777,32 @@ footer { background: linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-dar
     .topic-chip:nth-child(n) { transform: none; }
     .topics-lines { display: none; }
     .footer-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   АУДИТ: ДОКУМЕНТЫ, STICKY, ЗАЩИТА ЧТЕНИЯ
+   ============================================================ */
+
+/* Страницы без hero (политика): контент ниже фиксированного меню */
+.doc-section { padding-top: calc(var(--section-y) + 56px); }
+.doc-section .container { max-width: 800px; }
+.doc-section h1 { font-size: var(--fs-h2); margin-bottom: var(--sp-2); }
+.doc-section h2 { margin-top: var(--sp-4); }
+.doc-section p { margin-bottom: var(--sp-2); color: var(--text-light); line-height: var(--lh-body); }
+.doc-section p.lead { font-size: var(--fs-lead); margin-bottom: var(--sp-3); }
+.doc-section .doc-foot { margin-top: var(--sp-4); font-size: var(--fs-small); }
+
+/* Липкие колонки (гайд, витрина книг): воздушный зазор от меню */
+.guide-aside, .stage { top: 120px; }
+
+/* Юридическая строка футера читабельнее */
+.footer-note small { font-size: 0.75rem; }
+
+/* Без анимаций для тех, кто просит меньше движения */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .fade-in, .fade-in.visible { opacity: 1; transform: none; transition: none; }
+}
+@media (max-width: 768px) {
+    .doc-section { padding-top: 150px; }
 }

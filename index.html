@@ -47,6 +47,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <noscript><style>.fade-in{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 
@@ -62,27 +63,33 @@
         <button class="nav-burger" id="navBurger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
     </nav>
 
+    <!-- HERO v4: минимум текста + записка у фото -->
     <section class="hero">
         <div class="container hero-grid">
             <div class="fade-in">
                 <span class="hero-tagline">Бережно о важном.</span>
                 <h1>Мария Бурляева<br><span class="accent-italic">Клинический психолог и гештальт-психотерапевт</span></h1>
-                <div class="hero-greeting">
-                    <p>Меня зовут Мария. Я практикующий психолог. Помогаю найти себя и свои способы жить, свой темп, своих людей, своё место в этой жизни...</p>
-                    <p>Со мной Вы можете быть уверены, что Вас услышат, поймут и помогут в решении актуального запроса. Вы не только получите профессиональную помощь, но ещё и безопасную площадку для исследования себя и своих проблем.</p>
-                </div>
-                <div class="hero-badges">
-                    <span class="badge">10+ лет практики</span>
-                    <span class="badge">7500+ часов терапии</span>
-                    <span class="badge">Очно и онлайн</span>
-                </div>
-                <a href="#contact" class="btn-hero">Записаться на консультацию</a>
+                <div class="hero-cta"><a href="#contact" class="btn-hero">Записаться на консультацию</a></div>
             </div>
-            <div class="fade-in">
+            <div class="hero-photo fade-in">
                 <img src="assets/img/hero.jpg" alt="Мария Бурляева — клинический психолог" class="hero-image" decoding="async" fetchpriority="high">
+                <div class="note-card">
+                    <span class="hand">Пара слов о себе</span>
+                    <p>Меня зовут Мария. Помогаю найти себя и свои способы жить — свой темп, своих людей, своё место в этой жизни.</p>
+                    <p>Со мной вас услышат, поймут и помогут в решении актуального запроса — безопасно и бережно.</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Траст-бар: цифры доверия отдельной полосой -->
+    <div class="trust-bar">
+        <div class="container">
+            <span class="badge">10+ лет практики</span>
+            <span class="badge">7500+ часов терапии</span>
+            <span class="badge">Очно и онлайн</span>
+        </div>
+    </div>
 
     <section class="formats-section" id="formats">
         <div class="formats-container">
@@ -171,37 +178,6 @@
         </div>
     </section>
 
-    <section class="principles-section">
-        <div class="video-background">
-            <video id="oceanVideo" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
-                <source src="assets/ocean.mp4" type="video/mp4">
-            </video>
-            <div class="video-overlay"></div>
-        </div>
-        
-        <div class="principles-container">
-            <div class="principle-quote active">
-                <p>"Чтобы удержать душевное равновесие, восстановить эмоциональную стабильность, справиться со страхами и тревогами любому человеку может понадобиться помощь."</p>
-            </div>
-            <div class="principle-quote">
-                <p>"Существовать — значит изменяться"</p>
-            </div>
-            <div class="principle-quote">
-                <p>"Изменяться — значит взрослеть"</p>
-            </div>
-            <div class="principle-quote">
-                <p>"Взрослеть — значит бесконечно создавать себя."</p>
-            </div>
-        </div>
-        
-        <div class="quote-indicators" role="group" aria-label="Переключение цитат">
-            <button class="quote-dot active" data-index="0" aria-label="Цитата 1"></button>
-            <button class="quote-dot" data-index="1" aria-label="Цитата 2"></button>
-            <button class="quote-dot" data-index="2" aria-label="Цитата 3"></button>
-            <button class="quote-dot" data-index="3" aria-label="Цитата 4"></button>
-        </div>
-    </section>
-
     <section class="about-section" id="about">
         <div class="container">
             <div class="about-grid">
@@ -269,6 +245,37 @@
                 Не нашли свою тему — напишите мне всё равно: мы поговорим и поймём, смогу ли я помочь. 
                 <a href="#contact">Задать вопрос</a>
             </p>
+        </div>
+    </section>
+
+    <section class="principles-section">
+        <div class="video-background">
+            <video id="oceanVideo" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+                <source src="assets/ocean.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+        
+        <div class="principles-container">
+            <div class="principle-quote active">
+                <p>"Чтобы удержать душевное равновесие, восстановить эмоциональную стабильность, справиться со страхами и тревогами любому человеку может понадобиться помощь."</p>
+            </div>
+            <div class="principle-quote">
+                <p>"Существовать — значит изменяться"</p>
+            </div>
+            <div class="principle-quote">
+                <p>"Изменяться — значит взрослеть"</p>
+            </div>
+            <div class="principle-quote">
+                <p>"Взрослеть — значит бесконечно создавать себя."</p>
+            </div>
+        </div>
+        
+        <div class="quote-indicators" role="group" aria-label="Переключение цитат">
+            <button class="quote-dot active" data-index="0" aria-label="Цитата 1"></button>
+            <button class="quote-dot" data-index="1" aria-label="Цитата 2"></button>
+            <button class="quote-dot" data-index="2" aria-label="Цитата 3"></button>
+            <button class="quote-dot" data-index="3" aria-label="Цитата 4"></button>
         </div>
     </section>
 
