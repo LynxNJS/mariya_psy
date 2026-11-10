@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Материалы для самопомощи — Мария Бурляева</title>
-    <meta name="description" content="Материалы для самопомощи: гайд ВОЗ по стрессу, тесты на депрессию и тревогу по Беку, книжная полка с одиннадцатью книгами.">
+    <meta name="description" content="Материалы для самопомощи: гайд ВОЗ по стрессу, тесты на депрессию и тревогу по Беку, книжная полка с тринадцатью книгами.">
     
     <meta name="color-scheme" content="light only">
     <meta name="theme-color" content="#FAF6F0">
@@ -146,7 +146,7 @@
 
             <p class="license-note">
                 Источник: Важные навыки в периоды стресса: иллюстрированное пособие 
-                [Doing what matters in times of stress: an illustrated guide]. Женева: Всемирная организация 
+                [Doing what matter in times of stress: an illustrated guide]. Женева: Всемирная организация 
                 здравоохранения; 2020. Лицензия: CC BY-NC-SA 3.0 IGO. Распространение допускается 
                 в некоммерческих целях с указанием библиографической ссылки. Использование логотипа ВОЗ не допускается.
             </p>
@@ -198,7 +198,7 @@
             <div class="section-header fade-in">
                 <span class="handwritten">Книжная полка</span>
                 <h2>Книги, которые <span class="accent-italic">помогают</span></h2>
-                <p class="lead">Одиннадцать книг, которые я читаю сама и рекомендую клиентам. Выберите название — витрина покажет обложку и описание.</p>
+                <p class="lead">Тринадцать книг, которые я читаю сама и рекомендую клиентам. Выберите название — витрина покажет обложку и описание.</p>
             </div>
 
             <div class="books-showcase fade-in">
@@ -225,6 +225,8 @@
                     <button class="book-item" data-i="8"><span class="n">09</span><span class="t">«Решение проблем по методикам спецслужб»</span><span class="a">Морган Джонс</span></button>
                     <button class="book-item" data-i="9"><span class="n">10</span><span class="t">«Укрощение амигдалы»</span><span class="a">Джон Арден</span></button>
                     <button class="book-item" data-i="10"><span class="n">11</span><span class="t">«Беспокойный ум»</span><span class="a">Кей Джеймисон</span></button>
+                    <button class="book-item" data-i="11"><span class="n">12</span><span class="t">«Выбор»</span><span class="a">Эдит Ева Эгер</span></button>
+                    <button class="book-item" data-i="12"><span class="n">13</span><span class="t">«Дар»</span><span class="a">Эдит Ева Эгер, Эсме Швалль-Вейганд</span></button>
                 </div>
             </div>
         </div>
@@ -259,6 +261,7 @@
                     <h4>Меню</h4>
                     <ul>
                         <li><a href="index.html#about">Обо мне</a></li>
+                        <li><a href="education.html">Образование</a></li>
                         <li><a href="index.html#formats">Формат работы</a></li>
                         <li><a href="materials.html">Материалы для самопомощи</a></li>
                         <li><a href="materials.html#guide">Гайд по стрессу</a></li>
@@ -267,7 +270,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Контакты</h4>
-                    <p>89242268095<br><small>(только SMS, Telegram, MAX)</small></p>
+                    <p><a href="tel:+79242268095">89242268095</a><br><small>(только SMS, Telegram, MAX)</small></p>
                     <p>пр. Первостроителей 31<br>второй этаж</p>
                 </div>
             </div>
@@ -289,6 +292,7 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+        // Книжная полка: витрина с обложкой (13 книг)
         const BOOKS = [
             { t: '«Психосоматика. Тело говорит»', a: 'Екатерина Тур', d: ['Как научиться слушать своё тело и подобрать ключ к его исцелению. Хороший старт для тех, кто хочет понять связь между симптомами и чувствами.'], c: { src: 'assets/img/book-clock.jpg' } },
             { t: '«Осколки детских травм. Почему мы болеем и как это остановить»', a: 'Донна Джексон Наказава', d: ['О том, как детский опыт живёт в теле во взрослой жизни — и что можно сделать, чтобы этот круг остановился. Для бережного самоисследования.'], c: { src: 'assets/img/books-stack.jpg' } },
@@ -300,9 +304,25 @@
             { t: '«Страх близости»', a: 'Илсе Санд', d: ['Ещё одна книга Санд о проблемах людей, которые несколько иначе реагируют на окружающий мир. Эту книгу обязательно нужно прочитать тем, кто возвёл вокруг себя преграды и не даёт другим людям узнавать себя и любить.'], c: { src: 'assets/img/covers/strakh-blizosti.jpg' } },
             { t: '«Решение проблем по методикам спецслужб»', a: 'Морган Джонс', d: ['Большинство людей не умеют анализировать проблему, а потому не всегда может найти верное решение в трудной ситуации. Бывший аналитик ЦРУ Морган Джонс пишет о проверенных инструментах, которые помогут вам разобраться с самыми разными проблемами и овладеть основами структурированного анализа.'], c: { src: 'assets/img/covers/reshenie-problem-specsluzhb.jpg' } },
             { t: '«Укрощение амигдалы»', a: 'Джон Арден', d: ['Данные современных исследований в нейрофизиологии и практические рекомендации врача с огромным опытом помогут улучшить жизнь: избавиться от вредных привычек, не поддаваться грусти, развить память и психологическую устойчивость. Другими словами, вы сможете использовать особенности своего мозга себе же на пользу.'], c: { src: 'assets/img/covers/ukroshchenie-amigdaly.jpg' } },
-            { t: '«Беспокойный ум»', a: 'Кей Джеймисон', d: ['Биполярное расстройство — это постоянное маневрирование между периодами эйфории и невероятными спадами в чёрную депрессию. Психиатр Кей Джеймисон испытала это на себе, поэтому и стала изучать аффективные расстройства. В результате появилась это книга о борьбе с болезнью. Джеймисон пишет, что стоит только принять жизнь такой, какая она есть, как любые трудности станут преодолимыми.'], c: { src: 'assets/img/covers/bespokoynyy-um.jpg' } }
+            { t: '«Беспокойный ум»', a: 'Кей Джеймисон', d: ['Биполярное расстройство — это постоянное маневрирование между периодами эйфории и невероятными спадами в чёрную депрессию. Психиатр Кей Джеймисон испытала это на себе, поэтому и стала изучать аффективные расстройства. В результате появилась это книга о борьбе с болезнью. Джеймисон пишет, что стоит только принять жизнь такой, какая она есть, как любые трудности станут преодолимыми.'], c: { src: 'assets/img/covers/bespokoynyy-um.jpg' } },
+            { t: '«Выбор»', a: 'Эдит Ева Эгер', d: ['Эдит Ева Эгер в юном возрасте была отправлена вместе со своей семьей в Аушвиц. Там ее родители погибли в газовой камере, а Эдит и ее сестра испытали на себе все ужасы отвратительных лагерей смерти. Через 35 лет после окончания войны, став известным психологом, Эдит вернулась в Аушвиц, чтобы избавиться от воспоминаний о прошлом и вины выжившего.', 'Эта книга не просто мемуары пережившего холокост человека, это незабываемые хроники героизма и стойкости, милосердия и исцеления. Она показывает, что мы всегда можем выбирать, чему нас учит жизнь и как относиться к происходящему.'], c: { src: 'assets/img/covers/eger-vybor.jpg' } },
+            { t: '«Дар»', a: 'Эдит Ева Эгер, Эсме Швалль-Вейганд', d: ['Мы учимся быть свободными всю свою жизнь, так как свобода – это выбор и его нужно делать ежедневно, буквально шаг за шагом.', 'Эдит Ева Эгер – венгерская еврейка, пережившая ужасы Аушвица в подростковом возрасте. Она потеряла родителей, но сумела выжить вместе с сестрой, пройдя через ад нацистских лагерей. Спустя годы, создав семью в Америке и став известным психологом, она возвращается в Освенцим, чтобы переосмыслить травматичный опыт, найти в себе силы простить и обрести внутреннюю свободу. Это глубоко личная и пронзительная история, наполненная надеждой и силой человеческого духа.'], c: { src: 'assets/img/covers/eger-dar.jpg' } }
         ];
         const stage = document.getElementById('bookStage');
+        const showcase = document.querySelector('.books-showcase');
+        const bookList = document.querySelector('.book-list');
+        const isMobile = () => window.matchMedia('(max-width: 1024px)').matches;
+
+        function placeStage(anchor) {
+            if (!showcase || !bookList) return;
+            if (isMobile()) {
+                const target = anchor || bookList.querySelector('.book-item.active');
+                if (target) bookList.insertBefore(stage, target.nextSibling);
+            } else if (stage.parentElement !== showcase) {
+                showcase.insertBefore(stage, bookList);
+            }
+        }
+
         document.querySelectorAll('.book-item').forEach(btn => {
             btn.addEventListener('click', () => {
                 const book = BOOKS[+btn.dataset.i];
@@ -318,10 +338,19 @@
                     document.getElementById('stageDesc').innerHTML = book.d.map(p => `<p>${p}</p>`).join('');
                     document.querySelectorAll('.book-item').forEach(x => x.classList.remove('active'));
                     btn.classList.add('active');
+                    placeStage(btn);
                     stage.classList.remove('fade');
+                    if (isMobile()) stage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }, 300);
             });
         });
+
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => placeStage(), 150);
+        });
+        placeStage();
     </script>
 </body>
 </html>

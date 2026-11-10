@@ -63,7 +63,7 @@
         <button class="nav-burger" id="navBurger" aria-label="Открыть меню"><span></span><span></span><span></span></button>
     </nav>
 
-    <!-- HERO v4: минимум текста + записка у фото -->
+    <!-- HERO v4 -->
     <section class="hero">
         <div class="container hero-grid">
             <div class="fade-in">
@@ -82,7 +82,6 @@
         </div>
     </section>
 
-    <!-- Траст-бар: цифры доверия отдельной полосой -->
     <div class="trust-bar">
         <div class="container">
             <span class="badge">10+ лет практики</span>
@@ -189,7 +188,7 @@
                     <h2>Мария Бурляева</h2>
                     <p>Я — клинический психолог и гештальт-психотерапевт. В профессии более 10-ти лет, мой опыт в качестве практикующего психолога на сегодняшний день — это <strong>7500 часов индивидуальной работы с клиентами</strong>.</p>
                     <p><strong>Более 100 часов работы в группе</strong>. В <strong>личной терапии</strong> я нахожусь непрерывно уже <strong>10 лет</strong>, и <strong>7 лет в постоянной супервизии</strong>.</p>
-                    <p>Академическое образование в области психологии — 7 лет (три диплома), повышаю квалификацию каждый год, последипломное образование и углубленное изучение тонкостей психотерапии около 500 часов.</p>
+                    <p><a href="education.html" class="text-link">Академическое образование</a> в области психологии — 7 лет (три диплома), повышаю квалификацию каждый год, последипломное образование и углубленное изучение тонкостей психотерапии около 500 часов.</p>
                     <p>В работе с клиентами я использую преимущественно <strong>интегративный подход</strong>, что позволяет мне сочетать разные методы и выбирать наиболее подходящие инструменты, ориентируясь на личность человека и на его запрос.</p>
                     <p><em>«Нет шаблонам!» — каждый человек для меня феномен.</em></p>
 
@@ -382,6 +381,7 @@
                     <h4>Меню</h4>
                     <ul>
                         <li><a href="index.html#about">Обо мне</a></li>
+                        <li><a href="education.html">Образование</a></li>
                         <li><a href="index.html#formats">Формат работы</a></li>
                         <li><a href="materials.html">Материалы для самопомощи</a></li>
                         <li><a href="materials.html#guide">Гайд по стрессу</a></li>
@@ -390,7 +390,7 @@
                 </div>
                 <div class="footer-col">
                     <h4>Контакты</h4>
-                    <p>89242268095<br><small>(только SMS, Telegram, MAX)</small></p>
+                    <p><a href="tel:+79242268095">89242268095</a><br><small>(только SMS, Telegram, MAX)</small></p>
                     <p>пр. Первостроителей 31<br>второй этаж</p>
                 </div>
             </div>
@@ -453,13 +453,36 @@
             videoObserver.observe(ocean.closest('section'));
         }
 
+        // Отправка заявки на burlyaeva.m@bk.ru через FormSubmit + запасной mailto
         const form = document.getElementById('contactForm');
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const status = document.getElementById('formStatus');
-            status.classList.add('visible');
-            form.reset();
-            setTimeout(() => status.classList.remove('visible'), 6000);
+            const fd = new FormData(form);
+            const data = Object.fromEntries(fd.entries());
+            data._subject = 'Заявка с сайта Марии Бурляевой';
+            data._template = 'table';
+            data._captcha = 'false';
+            try {
+                const res = await fetch('https://formsubmit.co/ajax/burlyaeva.m@bk.ru', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                if (!res.ok) throw new Error('send failed');
+                status.textContent = 'Спасибо! Заявка отправлена. Я свяжусь с вами в течение 24 часов.';
+                status.classList.add('visible');
+                form.reset();
+            } catch (err) {
+                const body = encodeURIComponent(
+                    'Имя: ' + data.name + '\nТелефон или Telegram: ' + data.phone + '\nФормат: ' + data.service
+                );
+                window.location.href = 'mailto:burlyaeva.m@bk.ru?subject=' +
+                    encodeURIComponent('Заявка с сайта Марии Бурляевой') + '&body=' + body;
+                status.textContent = 'Открылась ваша почтовая программа для отправки письма. Если нет — напишите на burlyaeva.m@bk.ru.';
+                status.classList.add('visible');
+            }
+            setTimeout(() => status.classList.remove('visible'), 8000);
         });
     </script>
 </body>

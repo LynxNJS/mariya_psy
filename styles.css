@@ -1,6 +1,6 @@
 /* ============================================================
    ДИЗАЙН-СИСТЕМА «МОРСКОЙ БРИЗ» · styles.css
-   Единый файл для index.html, materials.html, privacy.html
+   Единый файл для index.html, materials.html, education.html, privacy.html
    ============================================================ */
 
 :root {
@@ -229,7 +229,7 @@ button.faq-question:focus-visible, .footer-social a:focus-visible,
     gap: var(--sp-2);
 }
 
-/* HERO v4: минимум текста + записка у фото + траст-бар */
+/* HERO v4 */
 .hero {
     padding-top: calc(var(--section-y) + 56px);
     padding-bottom: var(--section-y);
@@ -373,6 +373,87 @@ button.faq-question:focus-visible, .footer-social a:focus-visible,
 .about-text p { margin-bottom: var(--sp-2); color: var(--text-light); line-height: var(--lh-body); }
 .approach-tags { display: flex; flex-wrap: wrap; gap: var(--sp-1); margin-top: var(--sp-2); }
 .approach-tag { background: var(--blue-light); padding: 6px var(--sp-2); border-radius: 50px; font-size: var(--fs-small); color: var(--blue-dark); font-weight: 500; }
+
+/* Ссылка «Академическое образование» в тексте */
+.text-link {
+    color: var(--blue-dark);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(90, 122, 143, 0.4);
+    transition: color var(--transition);
+}
+.text-link:hover { color: var(--blue-deep); border-bottom-color: var(--blue-deep); }
+
+/* Отдельная страница образования */
+.education-page { padding-top: calc(var(--section-y) + 56px); background: var(--sand-lightest); }
+.education-page .section-header h1 { margin-bottom: var(--sp-2); }
+
+/* Образование: лента документов */
+.edu-group-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h3);
+    color: var(--blue-dark);
+    text-align: center;
+    margin: var(--sp-6) 0 var(--sp-2);
+}
+.edu-group-title:first-child { margin-top: var(--sp-3); }
+.edu-item {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: var(--sp-3);
+    padding: var(--sp-3) 0;
+    border-bottom: 1px solid rgba(90, 122, 143, 0.15);
+}
+.edu-item:last-child { border-bottom: none; }
+.edu-year {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--blue-medium);
+    line-height: 1.2;
+}
+.edu-item h3 { font-size: 1.25rem; margin-bottom: 4px; }
+.edu-program { color: var(--text-dark); font-size: var(--fs-small); font-weight: 600; margin-bottom: 6px; line-height: 1.5; }
+.edu-meta { color: var(--text-light); font-size: var(--fs-small); line-height: var(--lh-body); }
+.edu-issuer { color: var(--text-light); font-size: var(--fs-caption); line-height: 1.5; margin-top: 6px; }
+
+/* Галерея сертификатов: полароидная лента */
+.certs-title {
+    display: block;
+    text-align: center;
+    font-family: var(--font-hand);
+    font-size: var(--fs-hand);
+    color: var(--blue-dark);
+    margin: var(--sp-7) auto var(--sp-3);
+}
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--sp-3);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.cert-card {
+    display: block;
+    background: var(--white);
+    padding: 10px 10px 14px;
+    border-radius: 6px;
+    box-shadow: var(--shadow-soft);
+    transform: rotate(-1deg);
+    transition: transform var(--transition), box-shadow var(--transition);
+    text-decoration: none;
+}
+.cert-card:nth-child(even) { transform: rotate(1.2deg); }
+.cert-card:hover { transform: rotate(0deg) translateY(-6px); box-shadow: var(--shadow-medium); }
+.cert-card img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; display: block; border-radius: 2px; }
+.cert-card span {
+    display: block;
+    text-align: center;
+    font-size: var(--fs-caption);
+    color: var(--text-light);
+    margin-top: 10px;
+    line-height: 1.4;
+}
 
 /* Темы обращения */
 .topics-section { padding: var(--section-y) 0; overflow: hidden; }
@@ -563,7 +644,7 @@ button.faq-question {
 .farewell-inner { text-align: center; max-width: 640px; margin: 0 auto; }
 .farewell-inner .lead { margin: 0 auto var(--sp-3); }
 
-/* Футер: упоминание Instagram + иконка B17 */
+/* Футер */
 .footer-note {
     margin-top: var(--sp-2);
     font-size: var(--fs-caption);
@@ -770,6 +851,8 @@ footer { background: linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-dar
     .polaroid { max-width: 340px; }
     .chapters-sheet { padding: var(--sp-1) var(--sp-3); }
     .chapter { grid-template-columns: 48px 1fr; gap: var(--sp-2); padding: var(--sp-3) 0; }
+    .edu-item { grid-template-columns: 1fr; gap: var(--sp-1); }
+    .edu-year { font-size: 1.25rem; }
     .principle-quote { padding: var(--sp-4) var(--sp-3); }
     .quote-indicators { bottom: var(--sp-4); }
     .contact-section, .cta-box { padding: var(--sp-6) var(--sp-3); }
@@ -782,8 +865,6 @@ footer { background: linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-dar
 /* ============================================================
    АУДИТ: ДОКУМЕНТЫ, STICKY, ЗАЩИТА ЧТЕНИЯ
    ============================================================ */
-
-/* Страницы без hero (политика): контент ниже фиксированного меню */
 .doc-section { padding-top: calc(var(--section-y) + 56px); }
 .doc-section .container { max-width: 800px; }
 .doc-section h1 { font-size: var(--fs-h2); margin-bottom: var(--sp-2); }
@@ -792,17 +873,39 @@ footer { background: linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-dar
 .doc-section p.lead { font-size: var(--fs-lead); margin-bottom: var(--sp-3); }
 .doc-section .doc-foot { margin-top: var(--sp-4); font-size: var(--fs-small); }
 
-/* Липкие колонки (гайд, витрина книг): воздушный зазор от меню */
 .guide-aside, .stage { top: 120px; }
 
-/* Юридическая строка футера читабельнее */
 .footer-note small { font-size: 0.75rem; }
 
-/* Без анимаций для тех, кто просит меньше движения */
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .fade-in, .fade-in.visible { opacity: 1; transform: none; transition: none; }
 }
 @media (max-width: 768px) {
     .doc-section { padding-top: 150px; }
+    .education-page { padding-top: 150px; }
+}
+
+/* ============================================================
+   МОБИЛЬНЫЙ АУДИТ: ХЕДЕР, ПОЛКА
+   ============================================================ */
+.nav-logo span { white-space: nowrap; }
+
+@media (max-width: 768px) {
+    .navbar { top: 12px; width: calc(100% - 24px); padding: 10px 20px; }
+    .nav-logo { font-size: 1.25rem; }
+    .nav-logo span { font-size: 0.6875rem; }
+    .nav-logo span:first-of-type { padding-top: 4px; margin-top: 6px; }
+    .nav-links.active { top: calc(100% + 8px); }
+}
+
+@media (max-width: 768px) {
+    .book-item { flex-wrap: wrap; gap: 4px var(--sp-2); }
+    .book-item .a { flex-basis: 100%; order: 3; }
+}
+
+.book-list .stage {
+    position: static;
+    max-width: 340px;
+    margin: var(--sp-3) auto;
 }
